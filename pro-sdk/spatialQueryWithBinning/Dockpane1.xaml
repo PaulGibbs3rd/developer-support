@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="createFeatureClassFromSpatialQuery.Dockpane1View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="350"
+             d:DesignWidth="300"
+
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <DockPanel Grid.Row="0" Height="30">
+            <TextBlock Text="{Binding Heading}"
+                       Style="{DynamicResource Esri_TextBlockDockPaneHeader}"
+                       VerticalAlignment="Center" />
+        </DockPanel>
+
+        <!-- Body -->
+        <StackPanel Grid.Row="1" Margin="10">
+            <!-- Points layer combo (local map layers) -->
+            <TextBlock Text="Select Points Layer (from map):" Margin="0,5"/>
+            <ComboBox ItemsSource="{Binding MapPointLayers}"
+                      SelectedItem="{Binding SelectedFeatureLayerName}"
+                      Margin="0,5"/>
+
+            <!-- Polygon binning layer combo -->
+            <TextBlock Text="Select Polygon Binning Layer:" Margin="0,10,0,5" />
+            <ComboBox ItemsSource="{Binding MapPolygonLayers}"
+          SelectedItem="{Binding SelectedPolygonLayerName}"
+          Margin="0,5" />
+
+
+
+
+            <!-- Local parcels layer combo -->
+            <TextBlock Text="Local Parcels Layer (if not using Regrid):" Margin="0,5"/>
+            <ComboBox ItemsSource="{Binding MapParcelLayers}"
+                      SelectedItem="{Binding SelectedParcelsLayerName}"
+                      IsEnabled="{Binding IsLocalParcelsEnabled}"
+                      Margin="0,5"/>
+
+            <!-- Save to new FC -->
+            <CheckBox Content="Save output as new Feature Class"
+                      IsChecked="{Binding SaveAsNewFeatureClass}"
+                      Margin="0,10,0,5"/>
+
+            <!-- Changed here: use RunSpatialQueryCommand instead of RunBatchQueryCommand -->
+            <Button Content="Run Batch Points"
+                    Command="{Binding RunSpatialQueryCommand}"
+                    Margin="0,10,0,5"
+                    HorizontalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</UserControl>
