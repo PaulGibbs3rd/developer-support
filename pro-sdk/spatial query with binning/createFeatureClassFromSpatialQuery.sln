@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "createFeatureClassFromSpatialQuery", "createFeatureClassFromSpatialQuery\createFeatureClassFromSpatialQuery.csproj", "{0D31678F-99AE-4ACC-AE17-733F985799C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D31678F-99AE-4ACC-AE17-733F985799C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D31678F-99AE-4ACC-AE17-733F985799C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D31678F-99AE-4ACC-AE17-733F985799C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D31678F-99AE-4ACC-AE17-733F985799C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {981CA8FE-2883-4140-98C2-9414FB738750}
+	EndGlobalSection
+EndGlobal
